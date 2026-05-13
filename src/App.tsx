@@ -88,7 +88,7 @@ export default function App() {
             // scene store right away instead of deferring to a future tick.
             const current = excalidrawAPI.getSceneElements();
             const next = current.map((el) =>
-              el.id === output.elementId
+              el.id === output.elementId ? newElementWith(el, output.updates as never) : el
                 ? newElementWith(el, output.updates as never)
                 : el
             );

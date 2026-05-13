@@ -1,4 +1,4 @@
-import { DesignAgent } from "./agent";
+import { DesignAgent } from "./agents";
 import { routeAgentRequest } from "agents";
 
 export { DesignAgent };
