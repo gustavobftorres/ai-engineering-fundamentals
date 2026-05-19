@@ -10,3 +10,5 @@ evals/results
 lessons/.vitepress/cache
 
 CLAUDE.md
+
+.vscode
