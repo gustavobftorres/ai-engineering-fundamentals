@@ -1,0 +1,7 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "'JetBrains Mono'",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
