@@ -88,7 +88,7 @@ export default function App() {
         });
 
         const next = [...api.getSceneElements(), ...newOnes];
-        api.update({ elements: next, captureUpdate: CaptureUpdateAction.IMMEDIATELY });
+        api.updateScene({ elements: next, captureUpdate: CaptureUpdateAction.IMMEDIATELY });
         api.scrollToContent(next, { fitToContent: true })
         addToolOutput({
           toolCallId: toolCall.toolCallId,
