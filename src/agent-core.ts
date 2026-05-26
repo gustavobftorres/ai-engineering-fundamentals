@@ -10,7 +10,7 @@ import {
   type LanguageModel,
   type ModelMessage,
 } from "ai";
-import { buildSystem } from "./tools";
+import { buildTools } from "./tools";
 import { serializeCanvasState } from "./context/canvas-state";
 import type { ExcalidrawElement } from "./schemas";
 
@@ -117,6 +117,7 @@ interface AgentArgs {
   canvasState?: ExcalidrawElement[];
   system?: string;
   maxSteps?: number;
+  env?: any;
 }
 
 function buildSystem(
@@ -133,12 +134,13 @@ export function streamAgent({
   canvasState,
   system = SYSTEM_PROMPT,
   maxSteps = 5,
+  env = {},
 }: AgentArgs) {
   return streamText({
     model,
     system: buildSystem(system, canvasState),
     messages,
-    tools: buildTools(),
+    tools: buildTools(env),
     stopWhen: stepCountIs(maxSteps),
   });
 }
@@ -151,12 +153,13 @@ export async function runAgent({
   canvasState,
   system = SYSTEM_PROMPT,
   maxSteps = 5,
+  env = {},
 }: AgentArgs) {
   const result = await generateText({
     model,
     system: buildSystem(system, canvasState),
     messages,
-    tools,
+    tools: buildTools(env),
     stopWhen: stepCountIs(maxSteps),
   });
   return {
