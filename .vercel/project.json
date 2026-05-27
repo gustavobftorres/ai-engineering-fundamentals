@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_67ME3iCddrpQBUeiSpOg6thaYEvb",
+  "orgId": "team_cIPqxvSYj8jMvYr5khgamfNA",
+  "projectName": "excalidraw-buddy",
+  "settings": {
+    "createdAt": 1779823737161,
+    "framework": "vite",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
